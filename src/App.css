@@ -1,0 +1,117 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+/* ===== Root Variables ===== */
+:root {
+  --primary-yellow: #ffb703;
+  --secondary-orange: #fb8500;
+  --accent-blue: #219ebc;
+  --dark-text: #1a1a1a;
+  --light-bg: #fffaf3;
+  --white: #ffffff;
+  --gray: #777;
+  --header-height: 80px;
+
+  --shadow-small: 0 3px 10px rgba(0, 0, 0, 0.1);
+  --shadow-medium: 0 8px 20px rgba(0, 0, 0, 0.2);
+  --shadow-large: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--header-height);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: var(--light-bg);
+  color: var(--dark-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ==== Global Utility ==== */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.section-title {
+  font-size: 2.8em;
+  text-align: center;
+  margin-bottom: 60px;
+  color: var(--secondary-orange);
+  font-weight: 700;
+  position: relative;
+}
+.section-title::after {
+  content: "";
+  position: absolute;
+  width: 80px;
+  height: 4px;
+  background: var(--accent-blue);
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 3px;
+}
+
+/* === Buttons === */
+button {
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.3s ease;
+}
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* === Global Links === */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* === Animations === */
+@keyframes pulse {
+  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(251,133,0,0.4); }
+  70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(251,133,0,0); }
+  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(251,133,0,0); }
+}
+
+/* === Responsive Titles === */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2.1em;
+    margin-bottom: 40px;
+  }
+}
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 1.8em;
+  }
+}
+html, body {
+  overflow-x: hidden !important;
+  width: 100%;
+}
+
+/* Ensure main wrapper never exceeds viewport */
+.App {
+  max-width: 100%;
+  overflow-x: hidden;
+}

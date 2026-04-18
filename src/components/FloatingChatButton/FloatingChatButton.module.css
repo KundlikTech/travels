@@ -1,0 +1,151 @@
+.chatContainer {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 2000;
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+/* === Menu Animation === */
+.menu {
+  display: flex;
+  flex-direction: row-reverse; /* icons extend to left */
+  align-items: center;
+  gap: 12px;
+  transform-origin: right center;
+  animation: slideOutLeft 0.4s ease-out forwards;
+}
+
+.menu.closing {
+  animation: slideInRight 0.35s ease-in forwards;
+}
+
+/* Opening: icons expand left from chat icon */
+@keyframes slideOutLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(40px) scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+/* Closing: icons return smoothly into chat icon */
+@keyframes slideInRight {
+  0% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(40px) scale(0.8);
+  }
+}
+
+.menuItem {
+  position: relative;
+  background: var(--secondary-orange);
+  color: var(--white);
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: var(--shadow-small);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.menuItem:hover {
+  transform: translateY(-4px);
+  background: var(--accent-blue);
+}
+
+/* === Tooltip Styling === */
+.tooltip {
+  position: absolute;
+  top: -35px; /* tooltip appears above */
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  font-size: 0.85em;
+  padding: 6px 10px;
+  border-radius: 6px;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+
+.menuItem:hover .tooltip {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* === Main Chat Button === */
+.mainButton {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: none;
+  font-size: 1.8em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--white);
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  animation: pulseGlow 2.5s infinite;
+}
+
+.open {
+  background: linear-gradient(135deg, var(--primary-yellow), var(--secondary-orange));
+}
+
+.close {
+  background: var(--accent-blue);
+}
+
+.mainButton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}
+
+/* === Pulse Animation === */
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(251, 133, 0, 0.6);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(251, 133, 0, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(251, 133, 0, 0);
+  }
+}
+
+/* === Responsive === */
+@media (max-width: 600px) {
+  .chatContainer {
+    bottom: 20px;
+    right: 20px;
+  }
+  .mainButton {
+    width: 52px;
+    height: 52px;
+    font-size: 1.5em;
+  }
+  .menuItem {
+    width: 46px;
+    height: 46px;
+  }
+  .tooltip {
+    display: none; /* hide tooltips on small screens for simplicity */
+  }
+}

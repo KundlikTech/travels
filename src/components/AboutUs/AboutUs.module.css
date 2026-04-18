@@ -1,0 +1,119 @@
+.aboutSection {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 247, 232, 1) 0%,
+    rgba(255, 243, 216, 0.9) 100%
+  );
+  padding: 80px 0;
+  color: var(--dark-text);
+}
+
+.aboutWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+/* === Image === */
+.imageBox {
+  flex: 1;
+  min-width: 300px;
+  max-width: 48%;
+  position: relative;
+}
+
+.imageBox img {
+  width: 100%;
+  border-radius: 14px;
+  box-shadow: var(--shadow-medium);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.imageBox img:hover {
+  transform: scale(1.05);
+  box-shadow: var(--shadow-large);
+}
+
+/* === Text === */
+.textBox {
+  flex: 1;
+  min-width: 300px;
+  max-width: 48%;
+}
+
+.textBox h2 {
+  margin-bottom: 25px;
+}
+
+.textBox p {
+  font-size: 1.05em;
+  line-height: 1.7;
+  color: var(--gray);
+  margin-bottom: 20px;
+}
+
+/* === Call-to-Action Button === */
+.ctaBtn {
+  background: linear-gradient(90deg, var(--primary-yellow), var(--secondary-orange));
+  color: var(--white);
+  padding: 12px 26px;
+  border-radius: 8px;
+  font-size: 1em;
+  font-weight: 600;
+  box-shadow: var(--shadow-small);
+  transition: all 0.3s ease;
+}
+
+.ctaBtn:hover {
+  background: var(--accent-blue);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-medium);
+}
+
+/* === Responsive === */
+@media (max-width: 992px) {
+  .aboutWrapper {
+    gap: 40px;
+  }
+
+  .textBox p {
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 768px) {
+  .aboutWrapper {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .imageBox,
+  .textBox {
+    max-width: 100%;
+  }
+
+  .textBox h2 {
+    margin-top: 20px;
+  }
+
+  .ctaBtn {
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .aboutSection {
+    padding: 60px 0;
+  }
+
+  .textBox p {
+    font-size: 0.95em;
+  }
+
+  .ctaBtn {
+    padding: 10px 22px;
+    font-size: 0.95em;
+  }
+}

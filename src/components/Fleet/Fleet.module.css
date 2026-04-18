@@ -1,0 +1,129 @@
+.fleetSection {
+  padding: 80px 0;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 183, 3, 0.1) 0%,
+    rgba(251, 133, 0, 0.1) 100%
+  );
+  color: var(--dark-text);
+  overflow: hidden;
+}
+
+.carouselWrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: var(--shadow-medium);
+  background: var(--white);
+}
+
+.carousel {
+  display: flex;
+  transition: transform 1s cubic-bezier(0.25, 0.1, 0.25, 1);
+  width: 100%;
+}
+
+.slide {
+  min-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  padding: 40px 6%;
+  flex-wrap: wrap;
+  background: var(--white);
+}
+
+.text {
+  flex: 1;
+  min-width: 280px;
+}
+
+.text h3 {
+  font-size: 2em;
+  font-weight: 700;
+  color: var(--secondary-orange);
+  margin-bottom: 15px;
+}
+
+.text .seats {
+  font-weight: 600;
+  color: var(--accent-blue);
+  margin-bottom: 10px;
+}
+
+.text p {
+  color: var(--gray);
+  line-height: 1.6;
+}
+
+.imageBox {
+  flex: 1;
+  min-width: 300px;
+  text-align: center;
+}
+
+.imageBox img {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 12px;
+  box-shadow: var(--shadow-small);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.imageBox img:hover {
+  transform: scale(1.05);
+  box-shadow: var(--shadow-medium);
+}
+
+/* === Indicators === */
+.indicators {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 25px 0;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(251, 133, 0, 0.4);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dot:hover {
+  background: rgba(251, 133, 0, 0.7);
+}
+
+.active {
+  background: var(--secondary-orange);
+  transform: scale(1.2);
+}
+
+/* === Responsive === */
+@media (max-width: 992px) {
+  .slide {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+    padding: 30px 4%;
+  }
+  .text h3 {
+    font-size: 1.7em;
+  }
+}
+
+@media (max-width: 480px) {
+  .slide {
+    padding: 25px 3%;
+  }
+  .text h3 {
+    font-size: 1.4em;
+  }
+  .imageBox img {
+    max-width: 320px;
+  }
+}
