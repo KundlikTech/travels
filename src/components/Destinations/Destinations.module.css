@@ -1,0 +1,148 @@
+.destinations {
+  padding: 100px 0;
+  background: var(--light-bg);
+  color: var(--dark-text);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.subtitle {
+  font-size: 1.1em;
+  color: var(--gray);
+  margin-top: 10px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+}
+
+.card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-lg);
+}
+
+.imageWrapper {
+  position: relative;
+  height: 240px;
+  overflow: hidden;
+}
+
+.imageWrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.card:hover .imageWrapper img {
+  transform: scale(1.08);
+}
+
+.tag {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: linear-gradient(135deg, var(--primary-yellow), var(--secondary-orange));
+  color: var(--white);
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  font-size: 0.85em;
+  font-weight: 700;
+  box-shadow: var(--shadow-sm);
+  z-index: 10;
+}
+
+.content {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.content h3 {
+  font-size: 1.5em;
+  font-weight: 800;
+  margin-bottom: 12px;
+  color: var(--dark-heading);
+}
+
+.meta {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+  font-size: 0.9em;
+  color: var(--secondary-orange);
+  font-weight: 600;
+}
+
+.meta span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.content p {
+  color: var(--gray);
+  line-height: 1.6;
+  font-size: 1em;
+  margin-bottom: 25px;
+  flex: 1;
+}
+
+.bookBtn {
+  background: transparent;
+  color: var(--dark-text);
+  border: 2px solid var(--light-gray);
+  padding: 12px;
+  border-radius: var(--radius-pill);
+  font-weight: 700;
+  font-size: 1em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.card:hover .bookBtn {
+  background: var(--dark-heading);
+  color: var(--white);
+  border-color: var(--dark-heading);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .destinations {
+    padding: 80px 0;
+  }
+  .grid {
+    gap: 30px;
+  }
+  .content {
+    padding: 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .imageWrapper {
+    height: 200px;
+  }
+  .content h3 {
+    font-size: 1.3em;
+  }
+}

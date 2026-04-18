@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styles from "./Hero.module.css";
-import { FaSearch } from "react-icons/fa";
+import { FaPhoneAlt, FaMapMarkedAlt } from "react-icons/fa";
 const heroBg = "/images/homepage.png";
 
 function Hero() {
@@ -26,25 +26,23 @@ function Hero() {
       <div className={styles.overlay}>
         <div className={styles.heroContent}>
           <h1 className={styles.title} data-aos="fade-up">
-            Your Next Adventure Starts Here
+            Plan Your Dream Trip
           </h1>
           <p className={styles.subtitle} data-aos="fade-up" data-aos-delay="200">
-            Discover unforgettable destinations with JK Travels.
+            Premium cabs, curated tour packages, and unforgettable experiences with JK Travels. Travel smart, travel with ease.
           </p>
 
           <div
-            className={styles.searchBar}
+            className={styles.actionTokens}
             data-aos="fade-up"
             data-aos-delay="400"
           >
-            <input
-              type="text"
-              placeholder="Where do you want to go?"
-              className={styles.searchInput}
-            />
-            <button className={styles.searchButton}>
-              <FaSearch /> Find Tours
-            </button>
+            <a href="#services" className={styles.btnExplore}>
+              <FaMapMarkedAlt /> Explore Packages
+            </a>
+            <a href="#contact" className={styles.btnBook}>
+              <FaPhoneAlt /> Book Now
+            </a>
           </div>
         </div>
       </div>
@@ -53,3 +51,4 @@ function Hero() {
 }
 
 export default Hero;
+

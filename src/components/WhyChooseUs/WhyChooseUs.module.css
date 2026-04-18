@@ -1,0 +1,146 @@
+.whyChooseUs {
+  padding: 100px 0;
+  background: var(--white);
+  color: var(--dark-text);
+  overflow: hidden;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+.textBox {
+  flex: 1;
+}
+
+.subtitle {
+  font-size: 1.1em;
+  color: var(--gray);
+  line-height: 1.7;
+  margin: 15px 0 40px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.benefitItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  background: var(--light-bg);
+  padding: 25px;
+  border-radius: var(--radius-md);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.benefitItem:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-sm);
+  background: var(--white);
+}
+
+.icon {
+  font-size: 2em;
+  color: var(--secondary-orange);
+  background: rgba(251, 133, 0, 0.1);
+  padding: 15px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.benefitItem h4 {
+  font-size: 1.25em;
+  font-weight: 800;
+  color: var(--dark-heading);
+  margin-bottom: 8px;
+}
+
+.benefitItem p {
+  color: var(--gray);
+  font-size: 0.95em;
+  line-height: 1.5;
+}
+
+.imageBox {
+  flex: 1;
+  position: relative;
+  border-radius: var(--radius-lg);
+}
+
+.imageBox img {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  object-fit: cover;
+  height: 600px;
+}
+
+.statsCard {
+  position: absolute;
+  bottom: -30px;
+  left: -30px;
+  background: var(--white);
+  padding: 30px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  text-align: center;
+  z-index: 10;
+  border-left: 6px solid var(--secondary-orange);
+}
+
+.statsCard h3 {
+  font-size: 2.8em;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--primary-yellow), var(--secondary-orange));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1;
+  margin-bottom: 5px;
+}
+
+.statsCard p {
+  font-size: 1.1em;
+  font-weight: 600;
+  color: var(--dark-heading);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .wrapper {
+    flex-direction: column;
+  }
+  .imageBox img {
+    height: 400px;
+  }
+  .imageBox {
+    width: 100%;
+    margin-top: 40px;
+  }
+  .statsCard {
+    bottom: -20px;
+    left: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .whyChooseUs {
+    padding: 80px 0;
+  }
+  .benefitItem {
+    padding: 20px;
+  }
+  .icon {
+    font-size: 1.5em;
+    padding: 12px;
+  }
+  .imageBox img {
+    height: 300px;
+  }
+}

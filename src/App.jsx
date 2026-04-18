@@ -4,13 +4,17 @@ import "aos/dist/aos.css";
 
 import Header from "./components/Header/Header";
 import Hero from "./components/Hero/Hero";
+import Destinations from "./components/Destinations/Destinations";
 import Services from "./components/Services/Services";
 import AboutUs from "./components/AboutUs/AboutUs";
+import WhyChooseUs from "./components/WhyChooseUs/WhyChooseUs";
 import Fleet from "./components/Fleet/Fleet";
-import Gallery from "./components/Gallery/Gallery";
 import Stats from "./components/Stats/Stats";
+import Testimonials from "./components/Testimonials/Testimonials";
+import Gallery from "./components/Gallery/Gallery";
 import ContactFooter from "./components/ContactFooter/ContactFooter";
 import FloatingChatButton from "./components/FloatingChatButton/FloatingChatButton";
+import MobileBottomNav from "./components/MobileBottomNav/MobileBottomNav";
 
 import "./App.css";
 
@@ -31,6 +35,8 @@ function App() {
       <Hero />
 
       <main>
+        <Destinations />
+
         <section data-aos="fade-up">
           <Services />
         </section>
@@ -38,6 +44,8 @@ function App() {
         <section data-aos="fade-right">
           <AboutUs />
         </section>
+
+        <WhyChooseUs />
 
         <section data-aos="zoom-in">
           <Stats />
@@ -47,6 +55,8 @@ function App() {
           <Fleet />
         </section>
 
+        <Testimonials />
+
         <section data-aos="fade-up">
           <Gallery />
         </section>
@@ -54,6 +64,7 @@ function App() {
 
       <ContactFooter />
       <FloatingChatButton />
+      <MobileBottomNav />
     </div>
   );
 }
