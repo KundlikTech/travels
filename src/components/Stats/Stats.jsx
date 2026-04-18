@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styles from "./Stats.module.css";
 import { FaSmile, FaMapMarkedAlt, FaUsers, FaBus } from "react-icons/fa";
+import statsBg from "../../assets/images/stats-background.jpg";
 
 const statsData = [
   { icon: <FaUsers />, label: "Happy Clients", value: 1200 },
@@ -36,7 +37,11 @@ function Stats() {
   }, []);
 
   return (
-    <section id="stats" className={styles.statsSection}>
+    <section 
+      id="stats" 
+      className={styles.statsSection}
+      style={{ backgroundImage: `url(${statsBg})` }}
+    >
       <div className="container">
         <h2 className="section-title" data-aos="fade-up">
           Our Achievements

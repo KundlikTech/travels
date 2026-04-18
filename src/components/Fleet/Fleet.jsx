@@ -1,18 +1,20 @@
 import React, { useState, useEffect, useRef } from "react";
 import styles from "./Fleet.module.css";
+import toyotaInnova from "../../assets/images/toyota-innova.png";
+import toyotaEtios from "../../assets/images/toyota-etios.png";
 
 const fleetVehicles = [
   {
     name: "SUV (Toyota Innova)",
     seats: "5 + Driver",
     desc: "Perfect balance of space and luxury for family or business trips.",
-    image: "/images/toyota-innova.png",
+    image: toyotaInnova,
   },
   {
     name: "Sedan (Toyota Etios)",
     seats: "3 + Driver",
     desc: "Comfortable, efficient, and ideal for everyday travel.",
-    image: "/images/toyota-etios.png",
+    image: toyotaEtios,
   },
   {
     name: "Tempo Traveller",
