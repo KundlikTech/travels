@@ -8,21 +8,21 @@ const featuredDestinations = [
     title: "Enchanting Kashmir",
     duration: "5 Days / 4 Nights",
     desc: "Experience the paradise on earth with pristine lakes and snow-capped peaks.",
-    image: "/images/tour-packages.jpg",
+    image: "/images/dest-kashmir.png",
   },
   {
     id: 2,
     title: "Goa Getaway",
     duration: "4 Days / 3 Nights",
     desc: "Relax on sun-kissed beaches and enjoy premium resort stays.",
-    image: "/images/group-tours.jpg",
+    image: "/images/dest-goa.png",
   },
   {
     id: 3,
     title: "Majestic Rajasthan",
     duration: "7 Days / 6 Nights",
     desc: "Explore royal palaces, golden deserts, and vibrant cultural heritage.",
-    image: "/images/homepage.png",
+    image: "/images/dest-rajasthan.png",
   },
 ];
 

@@ -52,7 +52,7 @@ function WhyChooseUs() {
            	  <h3>10k+</h3>
               <p>Happy Travelers</p>
             </div>
-            <img src="/images/tour-packages.jpg" alt="Why choose us" loading="lazy" />
+            <img src="/images/dest-rajasthan.png" alt="Why choose us" loading="lazy" />
           </div>
         </div>
       </div>

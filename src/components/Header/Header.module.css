@@ -169,47 +169,96 @@
 /* ===== Responsive ===== */
 @media (max-width: 992px) {
   .menuToggle {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.2);
+  }
+
+  .sticky .menuToggle {
+    background: rgba(0, 0, 0, 0.05);
+    border-color: rgba(0,0,0,0.1);
+  }
+
+  .iconWrapper {
+    display: flex;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .iconOpen {
+    transform: rotate(90deg) scale(1.1);
   }
 
   .navLinks {
     position: fixed;
     top: 0;
-    right: 0;
-    width: 280px;
+    left: 0;
+    width: 100vw;
     height: 100vh;
     flex-direction: column;
-    background: var(--white);
-    align-items: flex-start;
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    align-items: center;
     justify-content: center;
-    gap: 30px;
-    padding: 0 40px;
-    transform: translateX(100%);
+    gap: 35px;
+    padding: 0;
+    transform: translateY(-100%);
     opacity: 0;
     pointer-events: none;
-    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .activeMenu {
-    transform: translateX(0);
+    transform: translateY(0);
     opacity: 1;
     pointer-events: auto;
   }
 
+  .navLinks li {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.4s ease;
+  }
+  
+  .activeMenu li {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .activeMenu li:nth-child(1) { transition-delay: 0.1s; }
+  .activeMenu li:nth-child(2) { transition-delay: 0.15s; }
+  .activeMenu li:nth-child(3) { transition-delay: 0.2s; }
+  .activeMenu li:nth-child(4) { transition-delay: 0.25s; }
+  .activeMenu li:nth-child(5) { transition-delay: 0.3s; }
+  .activeMenu li:nth-child(6) { transition-delay: 0.35s; }
+  .activeMenu li:nth-child(7) { transition-delay: 0.4s; }
+
   .navLinks li a {
-    font-size: 1.3em;
-    color: var(--dark-text);
+    font-size: 1.8em;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: 1px;
   }
 
   .navLinks li a:hover {
-    color: var(--secondary-orange);
+    color: var(--primary-yellow);
   }
 
   .bookBtn {
-    background: var(--secondary-orange);
+    background: linear-gradient(135deg, var(--primary-yellow), var(--secondary-orange));
     color: var(--white);
-    width: 100%;
-    padding: 14px 0;
+    width: auto;
+    padding: 16px 40px;
+    font-size: 1.1em;
+    margin-top: 20px;
+    box-shadow: 0 10px 20px rgba(251, 133, 0, 0.3);
   }
 }
 

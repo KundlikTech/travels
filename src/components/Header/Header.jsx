@@ -32,7 +32,9 @@ function Header() {
           onClick={toggleMenu}
           aria-label={menuOpen ? "Close menu" : "Open menu"}
         >
-          {menuOpen ? <FaTimes /> : <FaBars />}
+          <div className={`${styles.iconWrapper} ${menuOpen ? styles.iconOpen : ""}`}>
+            {menuOpen ? <FaTimes /> : <FaBars />}
+          </div>
         </div>
 
         <ul

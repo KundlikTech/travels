@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./AboutUs.module.css";
 
-const aboutImg = "/images/about-us.jpg"; // Replace with your scenic travel team image
+const aboutImg = "/images/about-premium.png"; // Replace with your scenic travel team image
 
 function AboutUs() {
   return (

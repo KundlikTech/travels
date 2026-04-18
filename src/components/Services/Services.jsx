@@ -12,19 +12,19 @@ const serviceItems = [
     icon: <FaMapMarkedAlt />,
     title: "Tour Packages",
     desc: "Carefully curated itineraries taking you to lush valleys, historic monuments, and pristine beaches.",
-    image: "/images/tour-packages.jpg",
+    image: "/images/service-tours.png",
   },
   {
     icon: <FaCar />,
     title: "Cab Services",
     desc: "Reliable, comfortable outstation and local cab drops with professional drivers.",
-    image: "/images/group-tours.jpg",
+    image: "/images/homepage.png",
   },
   {
     icon: <FaHotel />,
     title: "Hotel Bookings",
     desc: "Access competitive rates on luxury resorts, cozy homestays, and business hotels.",
-    image: "/images/hotel-desks.jpg",
+    image: "/images/dest-goa.png",
   },
   {
     icon: <FaRoute />,
