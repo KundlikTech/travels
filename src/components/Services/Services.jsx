@@ -53,12 +53,14 @@ function Services() {
             <div
               key={i}
               className={styles.card}
-              style={{ backgroundImage: `url(${s.image})` }}
-              data-aos="zoom-in"
+              data-aos="fade-up"
               data-aos-delay={i * 100}
             >
-              <div className={styles.overlay}>
-                <div className={styles.icon}>{s.icon}</div>
+              <div className={styles.imageBox}>
+                <img src={s.image} alt={s.title} loading="lazy" />
+                <div className={styles.iconBadge}>{s.icon}</div>
+              </div>
+              <div className={styles.contentBox}>
                 <h3>{s.title}</h3>
                 <p>{s.desc}</p>
               </div>
@@ -71,3 +73,4 @@ function Services() {
 }
 
 export default Services;
+

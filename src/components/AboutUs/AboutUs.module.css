@@ -1,85 +1,115 @@
 .aboutSection {
-  background: linear-gradient(
-    180deg,
-    rgba(255, 247, 232, 1) 0%,
-    rgba(255, 243, 216, 0.9) 100%
-  );
-  padding: 80px 0;
+  background: var(--white);
+  padding: 120px 0;
   color: var(--dark-text);
+  position: relative;
+  overflow: hidden;
+}
+
+.aboutSection::before {
+  content: "";
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(251, 133, 0, 0.08) 0%, rgba(255, 255, 255, 0) 70%);
+  border-radius: 50%;
+  pointer-events: none;
 }
 
 .aboutWrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 60px;
+  gap: 80px;
   flex-wrap: wrap;
 }
 
-/* === Image === */
+/* === Image Styling === */
 .imageBox {
   flex: 1;
   min-width: 300px;
-  max-width: 48%;
+  max-width: 45%;
   position: relative;
+}
+
+.imageBox::after {
+  content: "";
+  position: absolute;
+  inset: -15px;
+  border-radius: var(--radius-lg);
+  border: 2px dashed rgba(251, 133, 0, 0.3);
+  z-index: -1;
+  transition: all 0.5s ease;
+}
+
+.imageBox:hover::after {
+  transform: scale(1.02);
+  border-color: var(--secondary-orange);
 }
 
 .imageBox img {
   width: 100%;
-  border-radius: 14px;
-  box-shadow: var(--shadow-medium);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.imageBox img:hover {
-  transform: scale(1.05);
-  box-shadow: var(--shadow-large);
+.imageBox:hover img {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
 }
 
-/* === Text === */
+/* === Text Column === */
 .textBox {
   flex: 1;
-  min-width: 300px;
-  max-width: 48%;
+  min-width: 340px;
+  max-width: 50%;
 }
 
 .textBox h2 {
-  margin-bottom: 25px;
+  margin-bottom: 30px;
+  text-align: left;
 }
 
 .textBox p {
-  font-size: 1.05em;
-  line-height: 1.7;
+  font-size: 1.1em;
+  line-height: 1.8;
   color: var(--gray);
-  margin-bottom: 20px;
+  margin-bottom: 25px;
+}
+
+.textBox p strong {
+  color: var(--secondary-orange);
 }
 
 /* === Call-to-Action Button === */
 .ctaBtn {
-  background: linear-gradient(90deg, var(--primary-yellow), var(--secondary-orange));
+  background: var(--dark-heading);
   color: var(--white);
-  padding: 12px 26px;
-  border-radius: 8px;
-  font-size: 1em;
-  font-weight: 600;
-  box-shadow: var(--shadow-small);
-  transition: all 0.3s ease;
+  padding: 16px 36px;
+  border-radius: var(--radius-pill);
+  font-size: 1.05em;
+  font-weight: 700;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  margin-top: 15px;
 }
 
 .ctaBtn:hover {
-  background: var(--accent-blue);
+  background: var(--secondary-orange);
   transform: translateY(-3px);
-  box-shadow: var(--shadow-medium);
+  box-shadow: var(--shadow-md);
 }
 
 /* === Responsive === */
 @media (max-width: 992px) {
   .aboutWrapper {
-    gap: 40px;
+    gap: 50px;
   }
-
   .textBox p {
-    font-size: 1em;
+    font-size: 1.05em;
   }
 }
 
@@ -91,29 +121,32 @@
 
   .imageBox,
   .textBox {
-    max-width: 100%;
+    max-width: 90%;
   }
 
   .textBox h2 {
-    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .imageBox::after {
+    display: none;
   }
 
   .ctaBtn {
-    margin-top: 10px;
+    width: 100%;
+    margin-top: 20px;
   }
 }
 
 @media (max-width: 480px) {
   .aboutSection {
-    padding: 60px 0;
+    padding: 70px 0;
   }
-
+  .imageBox, .textBox {
+    max-width: 100%;
+  }
   .textBox p {
-    font-size: 0.95em;
-  }
-
-  .ctaBtn {
-    padding: 10px 22px;
-    font-size: 0.95em;
+    font-size: 1em;
+    line-height: 1.6;
   }
 }

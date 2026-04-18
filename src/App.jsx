@@ -17,10 +17,10 @@ import "./App.css";
 function App() {
   useEffect(() => {
     AOS.init({
-      duration: 1200,   // smooth animation duration
-      once: true,       // only animate once per element
-      offset: 80,       // scroll offset before triggering
-      easing: "ease-in-out", // consistent easing
+      duration: 800,        // Faster, punchier animation duration
+      once: true,           // only animate once per element
+      offset: 50,           // Trigger slightly earlier to feel more responsive
+      easing: "ease-out-cubic", // Snappy easing logic for a modern "classy" feel
     });
     AOS.refresh();
   }, []);

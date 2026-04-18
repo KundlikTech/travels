@@ -1,19 +1,40 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
-
 /* ===== Root Variables ===== */
 :root {
-  --primary-yellow: #ffb703;
+  /* Brand Colors Refined */
+  --primary-yellow: #FFC300;
+  --primary-yellow-hover: #ffb703;
   --secondary-orange: #fb8500;
+  --secondary-orange-hover: #e85d04;
   --accent-blue: #219ebc;
-  --dark-text: #1a1a1a;
-  --light-bg: #fffaf3;
+  
+  /* Neutral / Contrast */
+  --dark-text: #0f172a; /* Sleek slate dark */
+  --dark-heading: #020617;
+  --light-bg: #f8fafc;
   --white: #ffffff;
-  --gray: #777;
-  --header-height: 80px;
+  --gray: #64748b;
+  --light-gray: #e2e8f0;
 
-  --shadow-small: 0 3px 10px rgba(0, 0, 0, 0.1);
-  --shadow-medium: 0 8px 20px rgba(0, 0, 0, 0.2);
-  --shadow-large: 0 15px 30px rgba(0, 0, 0, 0.3);
+  /* Typography */
+  --font-heading: "Outfit", sans-serif;
+  --font-body: "Inter", sans-serif;
+
+  /* Layout & Decor */
+  --header-height: 80px;
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-pill: 50px;
+  
+  /* Depth & Shadows */
+  --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+  --shadow-glow: 0 0 20px rgba(251, 133, 0, 0.3);
+  
+  /* Glassmorphism */
+  --glass-bg: rgba(255, 255, 255, 0.85);
+  --glass-border: rgba(255, 255, 255, 0.4);
 }
 
 html {
@@ -28,11 +49,16 @@ html {
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: var(--font-body);
   background: var(--light-bg);
   color: var(--dark-text);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--dark-heading);
 }
 
 .App {

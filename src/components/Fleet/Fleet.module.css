@@ -1,10 +1,6 @@
 .fleetSection {
-  padding: 80px 0;
-  background: linear-gradient(
-    180deg,
-    rgba(255, 183, 3, 0.1) 0%,
-    rgba(251, 133, 0, 0.1) 100%
-  );
+  padding: 120px 0;
+  background: var(--light-bg);
   color: var(--dark-text);
   overflow: hidden;
 }
@@ -12,9 +8,15 @@
 .carouselWrapper {
   position: relative;
   overflow: hidden;
-  border-radius: 16px;
-  box-shadow: var(--shadow-medium);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
   background: var(--white);
+  border: 1px solid var(--light-gray);
+  transition: box-shadow 0.4s ease;
+}
+
+.carouselWrapper:hover {
+  box-shadow: var(--shadow-lg);
 }
 
 .carousel {
@@ -28,102 +30,113 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 60px;
-  padding: 40px 6%;
+  gap: 80px;
+  padding: 60px 8%;
   flex-wrap: wrap;
-  background: var(--white);
+  background: transparent;
 }
 
 .text {
   flex: 1;
-  min-width: 280px;
+  min-width: 300px;
 }
 
 .text h3 {
-  font-size: 2em;
-  font-weight: 700;
-  color: var(--secondary-orange);
+  font-size: 2.2em;
+  font-weight: 800;
+  color: var(--dark-heading);
   margin-bottom: 15px;
 }
 
 .text .seats {
+  display: inline-block;
   font-weight: 600;
-  color: var(--accent-blue);
-  margin-bottom: 10px;
+  color: var(--secondary-orange);
+  margin-bottom: 20px;
+  padding: 6px 16px;
+  background: rgba(251, 133, 0, 0.1);
+  border-radius: var(--radius-pill);
+  font-size: 0.9em;
 }
 
 .text p {
   color: var(--gray);
-  line-height: 1.6;
+  line-height: 1.8;
+  font-size: 1.05em;
 }
 
 .imageBox {
   flex: 1;
-  min-width: 300px;
+  min-width: 280px;
   text-align: center;
 }
 
 .imageBox img {
   width: 100%;
-  max-width: 420px;
-  border-radius: 12px;
-  box-shadow: var(--shadow-small);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  max-width: 500px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.6s ease;
 }
 
-.imageBox img:hover {
-  transform: scale(1.05);
-  box-shadow: var(--shadow-medium);
+.imageBox:hover img {
+  transform: scale(1.03) translateY(-5px);
+  box-shadow: var(--shadow-md);
 }
 
 /* === Indicators === */
 .indicators {
   display: flex;
   justify-content: center;
-  gap: 10px;
-  margin: 25px 0;
+  gap: 12px;
+  margin: 30px 0 40px;
 }
 
 .dot {
-  width: 12px;
-  height: 12px;
+  width: 14px;
+  height: 14px;
   border-radius: 50%;
   border: none;
-  background: rgba(251, 133, 0, 0.4);
+  background: var(--light-gray);
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .dot:hover {
-  background: rgba(251, 133, 0, 0.7);
+  background: rgba(251, 133, 0, 0.5);
+  transform: scale(1.2);
 }
 
 .active {
-  background: var(--secondary-orange);
-  transform: scale(1.2);
+  background: linear-gradient(135deg, var(--primary-yellow), var(--secondary-orange));
+  transform: scale(1.3);
+  box-shadow: 0 4px 10px rgba(251, 133, 0, 0.3);
 }
 
 /* === Responsive === */
 @media (max-width: 992px) {
   .slide {
-    flex-direction: column;
+    flex-direction: column-reverse;
     text-align: center;
-    gap: 30px;
-    padding: 30px 4%;
+    gap: 40px;
+    padding: 50px 5%;
   }
   .text h3 {
-    font-size: 1.7em;
+    font-size: 1.8em;
   }
 }
 
 @media (max-width: 480px) {
+  .fleetSection {
+    padding: 80px 0;
+  }
   .slide {
-    padding: 25px 3%;
+    padding: 40px 5%;
   }
   .text h3 {
-    font-size: 1.4em;
+    font-size: 1.6em;
   }
   .imageBox img {
-    max-width: 320px;
+    max-width: 100%;
   }
 }

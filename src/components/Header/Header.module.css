@@ -4,17 +4,44 @@
   left: 0;
   width: 100%;
   z-index: 2000;
-  background: linear-gradient(90deg, var(--primary-yellow), var(--secondary-orange));
+  background: transparent;
   color: var(--white);
-  box-shadow: var(--shadow-small);
-  transition: all 0.4s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 10px 0;
 }
 
-/* Sticky effect */
+/* Glassmorphic Sticky Island Effect */
 .sticky {
-  box-shadow: var(--shadow-medium);
-  background: linear-gradient(90deg, #ffb703, #f78c1c);
-  transform: translateY(0);
+  padding: 5px 0;
+}
+
+.sticky .navbar {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--shadow-md);
+  border-radius: var(--radius-pill);
+  color: var(--dark-text);
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.sticky .logo h1,
+.sticky .logo p {
+  color: var(--dark-text);
+}
+
+.sticky .navLinks li a {
+  color: var(--dark-text);
+}
+
+.sticky .navLinks li a:hover {
+  color: var(--secondary-orange);
+}
+
+.sticky .menuToggle {
+  color: var(--dark-text);
 }
 
 /* Navigation Bar */
@@ -22,33 +49,55 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: var(--header-height);
+  height: calc(var(--header-height) - 10px);
   padding: 0 5%;
+  transition: all 0.4s ease;
+  max-width: 100%;
 }
 
 .logo {
   display: flex;
   flex-direction: column;
-  line-height: 1.2;
+  line-height: 1.1;
+  text-decoration: none;
 }
 
 .logo h1 {
-  font-size: 2em;
-  font-weight: 700;
-  letter-spacing: 1px;
-  color: var(--white);
+  font-size: 2.1em;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  background: linear-gradient(90deg, #ffffff 0%, rgba(255, 255, 255, 0.8) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.4s ease;
+  text-transform: uppercase;
 }
 
 .logo p {
-  font-size: 0.85em;
-  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.72em;
+  font-weight: 500;
+  letter-spacing: 2px;
+  color: var(--primary-yellow);
+  text-transform: uppercase;
+  transition: all 0.4s ease;
+  margin-top: 3px;
+}
+
+.sticky .logo h1 {
+  background: linear-gradient(90deg, var(--dark-heading) 0%, rgba(2, 6, 23, 0.8) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.sticky .logo p {
+  color: var(--secondary-orange);
 }
 
 /* Nav Links */
 .navLinks {
   display: flex;
   align-items: center;
-  gap: 25px;
+  gap: 30px;
   list-style: none;
   transition: all 0.4s ease;
 }
@@ -56,57 +105,65 @@
 .navLinks li a {
   color: var(--white);
   font-weight: 500;
-  font-size: 1em;
+  font-size: 0.95em;
   position: relative;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
-/* Hover underline effect */
+/* Hover dot indicator */
 .navLinks li a::after {
   content: "";
   position: absolute;
-  left: 0;
-  bottom: -3px;
-  width: 0;
-  height: 2px;
-  background-color: var(--accent-blue);
-  transition: width 0.3s ease;
+  left: 50%;
+  bottom: -6px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: var(--primary-yellow);
+  transform: translateX(-50%) scale(0);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .navLinks li a:hover::after {
-  width: 100%;
+  transform: translateX(-50%) scale(1);
 }
 
 .navLinks li a:hover {
-  color: var(--accent-blue);
+  color: var(--primary-yellow);
 }
 
 /* Book Now Button */
 .bookBtn {
-  background-color: var(--white);
+  background: var(--white);
   color: var(--secondary-orange);
-  padding: 8px 18px;
-  border-radius: 6px;
+  padding: 10px 24px;
+  border-radius: var(--radius-pill);
   font-weight: 600;
+  font-size: 0.95em;
   transition: all 0.3s ease;
-  box-shadow: var(--shadow-small);
+  box-shadow: var(--shadow-sm);
+}
+
+.sticky .bookBtn {
+  background: linear-gradient(135deg, var(--primary-yellow), var(--secondary-orange));
+  color: var(--white);
 }
 
 .bookBtn:hover {
-  background-color: var(--accent-blue);
-  color: var(--white);
   transform: translateY(-2px);
-  box-shadow: var(--shadow-medium);
+  box-shadow: var(--shadow-md);
+  filter: brightness(1.1);
 }
 
 /* Mobile Menu */
 .menuToggle {
   display: none;
   color: var(--white);
-  font-size: 1.8em;
+  font-size: 1.6em;
   cursor: pointer;
   z-index: 2100;
+  transition: color 0.3s ease;
 }
 
 /* ===== Responsive ===== */
@@ -116,42 +173,54 @@
   }
 
   .navLinks {
-    position: absolute;
-    top: var(--header-height);
+    position: fixed;
+    top: 0;
     right: 0;
-    width: 100%;
+    width: 280px;
+    height: 100vh;
     flex-direction: column;
-    background: linear-gradient(180deg, var(--primary-yellow), var(--secondary-orange));
-    align-items: center;
+    background: var(--white);
+    align-items: flex-start;
     justify-content: center;
-    gap: 20px;
-    padding: 30px 0;
-    transform: translateY(-100%);
+    gap: 30px;
+    padding: 0 40px;
+    transform: translateX(100%);
     opacity: 0;
     pointer-events: none;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
   }
 
   .activeMenu {
-    transform: translateY(0);
+    transform: translateX(0);
     opacity: 1;
     pointer-events: auto;
   }
 
   .navLinks li a {
-    font-size: 1.2em;
+    font-size: 1.3em;
+    color: var(--dark-text);
+  }
+
+  .navLinks li a:hover {
+    color: var(--secondary-orange);
   }
 
   .bookBtn {
-    font-size: 1.1em;
+    background: var(--secondary-orange);
+    color: var(--white);
+    width: 100%;
+    padding: 14px 0;
   }
 }
 
 @media (max-width: 480px) {
   .logo h1 {
-    font-size: 1.6em;
+    font-size: 1.5em;
   }
-
-  .logo p {
-    font-size: 0.75em;
+  .navbar {
+    padding: 0 15px;
+  }
+  .sticky .navbar {
+    border-radius: 0;
   }
 }
