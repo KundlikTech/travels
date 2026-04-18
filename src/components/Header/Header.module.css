@@ -240,7 +240,8 @@
   .activeMenu li:nth-child(6) { transition-delay: 0.35s; }
   .activeMenu li:nth-child(7) { transition-delay: 0.4s; }
 
-  .navLinks li a {
+  .navLinks li a,
+  .sticky .navLinks li a {
     font-size: 1.8em;
     font-weight: 700;
     color: var(--white);

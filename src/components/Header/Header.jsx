@@ -16,26 +16,39 @@ function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Prevent body scrolling when mobile menu is open
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [menuOpen]);
+
   return (
     <header
       className={`${styles.header} ${isSticky ? styles.sticky : ""}`}
       data-aos="slide-down"
     >
       <nav className={styles.navbar}>
-        <div className={styles.logo}>
+        <a href="#home" className={styles.logo} onClick={closeMenu}>
           <h1>JK Travels</h1>
           <p>Your Journey. Guaranteed.</p>
-        </div>
+        </a>
 
-        <div
+        <button
           className={styles.menuToggle}
           onClick={toggleMenu}
           aria-label={menuOpen ? "Close menu" : "Open menu"}
+          aria-expanded={menuOpen}
         >
           <div className={`${styles.iconWrapper} ${menuOpen ? styles.iconOpen : ""}`}>
             {menuOpen ? <FaTimes /> : <FaBars />}
           </div>
-        </div>
+        </button>
 
         <ul
           className={`${styles.navLinks} ${
