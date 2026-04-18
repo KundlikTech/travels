@@ -1,5 +1,6 @@
 /* ===== Base Reset & Global Settings ===== */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+@import "aos/dist/aos.css";
 
 /* Reset */
 * {
@@ -41,6 +42,3 @@ button {
   background: none;
   font-family: inherit;
 }
-
-/* Import AOS library animations */
-@import "aos/dist/aos.css";
