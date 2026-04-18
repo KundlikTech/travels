@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styles from "./Hero.module.css";
 import { FaSearch } from "react-icons/fa";
-import heroBg from "../../assets/images/homepage.png";
+const heroBg = "/images/homepage.png";
 
 function Hero() {
   const [bgLoaded, setBgLoaded] = useState(false);
